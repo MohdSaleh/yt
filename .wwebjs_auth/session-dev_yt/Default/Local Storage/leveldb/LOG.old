@@ -1,6 +1,0 @@
-2024/01/15-13:27:16.564 8403 Reusing MANIFEST /Users/ryansaleh/Desktop/WABOT/YT-WaBot/.wwebjs_auth/session-dev_yt/Default/Local Storage/leveldb/MANIFEST-000001
-2024/01/15-13:27:16.564 8403 Recovering log #3
-2024/01/15-13:27:16.564 8403 Reusing old log /Users/ryansaleh/Desktop/WABOT/YT-WaBot/.wwebjs_auth/session-dev_yt/Default/Local Storage/leveldb/000003.log 
-2024/01/15-13:29:17.970 1ee03 Level-0 table #5: started
-2024/01/15-13:29:17.973 1ee03 Level-0 table #5: 28342 bytes OK
-2024/01/15-13:29:17.979 1ee03 Delete type=0 #3
