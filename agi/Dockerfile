@@ -1,30 +1,24 @@
 # Use Python 3.11 base image
 FROM python:3.11
 
-# Install pymemgpt
+# Install pymemgpt and git
+RUN apt-get update && apt-get install -y git
 RUN pip install pymemgpt
 
-# Create required directories
-RUN mkdir -p /.memgpt/presets /.memgpt/config /.memgpt/personas /.memgpt/humans /.memgpt/system_prompts
+# Copy the setup script
+COPY setup.sh /setup.sh
 
-# Copy files and directories
-COPY chat_dev_yt_preset.yaml /.memgpt/presets/chat_dev_yt_preset.yaml
-COPY config /.memgpt/config
-COPY DeveloperYT /.memgpt/personas/DeveloperYT
-COPY student.txt /.memgpt/humans/student.txt
-COPY chat_dev_yt.txt /.memgpt/system_prompts/chat_dev_yt.txt
+# Make the setup script executable
+RUN chmod +x /setup.sh
 
-# Copy the start script
-COPY start.sh /start.sh
+# Run the setup script
+RUN /setup.sh
 
-# Make the start script executable
-RUN chmod +x /start.sh
-
-# Set the working directory
-WORKDIR /.memgpt
+# Set the working directory to the .memgpt directory
+WORKDIR /root/.memgpt
 
 # Expose port 3000
 EXPOSE 3000
 
-# Start script
-CMD ["/start.sh"]
+# Start memgpt server
+CMD ["memgpt", "server", "--port", "3000"]
