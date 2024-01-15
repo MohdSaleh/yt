@@ -1,0 +1,27 @@
+2024/01/15-13:30:20.611 fa03 Reusing MANIFEST /Users/ryansaleh/Desktop/WABOT/YT-WaBot/.wwebjs_auth/session-dev_yt/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/01/15-13:30:20.611 fa03 Recovering log #430
+2024/01/15-13:30:20.656 fa03 Reusing old log /Users/ryansaleh/Desktop/WABOT/YT-WaBot/.wwebjs_auth/session-dev_yt/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000430.log 
+2024/01/15-13:30:31.160 b403 Level-0 table #438: started
+2024/01/15-13:30:31.172 b403 Level-0 table #438: 709192 bytes OK
+2024/01/15-13:30:31.180 b403 Delete type=0 #430
+2024/01/15-13:30:31.180 b403 Manual compaction at level-0 from '\x00L\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00M\x00\x00\x00' @ 0 : 0; will stop at '\x00L\x00\x00\x05' @ 2073978 : 1
+2024/01/15-13:30:31.180 b403 Compacting 1@0 + 5@1 files
+2024/01/15-13:30:31.270 b403 Generated table #439@0: 179538 keys, 2364732 bytes
+2024/01/15-13:30:31.296 b403 Generated table #440@0: 25603 keys, 2184537 bytes
+2024/01/15-13:30:31.332 b403 Generated table #441@0: 63668 keys, 2218830 bytes
+2024/01/15-13:30:31.339 b403 Generated table #442@0: 10719 keys, 238981 bytes
+2024/01/15-13:30:31.339 b403 Compacted 1@0 + 5@1 files => 7007080 bytes
+2024/01/15-13:30:31.344 b403 compacted to: files[ 0 4 1 0 0 0 0 ]
+2024/01/15-13:30:31.345 b403 Delete type=2 #438
+2024/01/15-13:30:31.345 b403 Manual compaction at level-0 from '\x00L\x00\x00\x05' @ 2073978 : 1 .. '\x00M\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/01/15-13:30:35.493 fa03 Compacting 1@1 + 1@2 files
+2024/01/15-13:30:35.539 fa03 Generated table #443@1: 18127 keys, 1044513 bytes
+2024/01/15-13:30:35.539 fa03 Compacted 1@1 + 1@2 files => 1044513 bytes
+2024/01/15-13:30:35.545 fa03 compacted to: files[ 0 3 1 0 0 0 0 ]
+2024/01/15-13:30:35.545 fa03 Delete type=2 #439
+2024/01/15-13:30:35.545 fa03 Delete type=2 #364
+2024/01/15-13:30:35.545 fa03 Delete type=2 #414
+2024/01/15-13:30:35.545 fa03 Delete type=2 #433
+2024/01/15-13:30:35.545 fa03 Delete type=2 #432
+2024/01/15-13:30:35.545 fa03 Delete type=2 #435
+2024/01/15-13:30:35.545 fa03 Delete type=2 #434

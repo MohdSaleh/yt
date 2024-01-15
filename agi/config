@@ -1,0 +1,25 @@
+[defaults]
+preset = chat_dev_yt_preset
+persona = DeveloperYT
+human = student
+
+[model]
+model = gpt-4
+model_endpoint = https://agi.ryansaleh.com/v1
+model_endpoint_type = openai
+context_window = 8192
+
+[embedding]
+embedding_endpoint_type = local
+embedding_dim = 384
+embedding_chunk_size = 300
+
+[archival_storage]
+type = local
+
+[version]
+memgpt_version = 0.2.9
+
+[client]
+anon_clientid = 000000000000000000002a899dbbb7ac
+
