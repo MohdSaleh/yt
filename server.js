@@ -55,7 +55,7 @@ client.on('message', message => {
         // });
         const postData = createPostData(message);
         console.log(postData)
-        axios.post('https://yt-agi.ryansaleh.com/agents/message', postData, {
+        axios.post('https://yt-agi.ryansaleh.com/api/agents/message', postData, {
             headers: {
                 'accept': 'application/json',
                 'content-type': 'application/json'
@@ -112,7 +112,7 @@ function createPostData(message) {
     }
     // Construct the postData object
     const postData = {
-        user_id: generateUniqueIdFromPhoneNumber(message.from), // Assuming the WhatsApp number is the user_id
+        user_id: "null", // Assuming the WhatsApp number is the user_id
         agent_id: "YoungtechyAGI_X", // Replace with the actual agent_id if dynamic
         message: messageContent.toString(),
         stream: false,
