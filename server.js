@@ -6,6 +6,7 @@ const qrcode = require('qrcode-terminal');
 const axios = require('axios');
 const fs = require('fs');
 require('dotenv').config();
+const crypto = require('crypto');
 
 const app = express();
 
@@ -111,7 +112,7 @@ function createPostData(message) {
     }
     // Construct the postData object
     const postData = {
-        user_id: message.from, // Assuming the WhatsApp number is the user_id
+        user_id: generateUniqueIdFromPhoneNumber(message.from), // Assuming the WhatsApp number is the user_id
         agent_id: "YoungtechyAGI_X", // Replace with the actual agent_id if dynamic
         message: messageContent.toString(),
         stream: false,
@@ -121,37 +122,9 @@ function createPostData(message) {
     return postData;
 }
 
-
-
-
-// function createPostData(message) {
-//     let messageContent;
-
-//     // Check if the message includes a quoted message
-//     if (message.hasQuotedMsg && message.quotedMsg) {
-//         // Concatenate the quoted message body and the current message body
-//         messageContent = message.quotedMsg.body + " " + message.body;
-//         const postData = {
-//             user_id: message.from, // Assuming the WhatsApp number is the user_id
-//             agent_id: "YoungtechyAGI_X", // Replace with the actual agent_id if dynamic
-//             message: messageContent,
-//             stream: false,
-//             role: "user"
-//         };
-//         return postData;
-//     } else {
-//         // Use only the current message body
-//         messageContent = message.body;
-//         const postData = {
-//             user_id: message.from, // Assuming the WhatsApp number is the user_id
-//             agent_id: "YoungtechyAGI_X", // Replace with the actual agent_id if dynamic
-//             message: messageContent,
-//             stream: false,
-//             role: "user"
-//         };
-//         return postData;
-//     }
-// }
+function generateUniqueIdFromPhoneNumber(phoneNumber) {
+    return crypto.createHash('sha256').update(phoneNumber).digest('hex');
+}
 
 app.use(express.json());
 
@@ -167,6 +140,10 @@ app.post('/send-message', (req, res) => {
             res.status(500).json({status: 'error', message: err.toString()});
         });
 });
+
+app.get('/', (req, res) => {
+    res.send('Server is running!');
+})
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
