@@ -112,10 +112,12 @@ function createPostData(message) {
     }
     // Construct the postData object
     let phone = message.from;
-    let UUID = "26f7634e-f966-4a5c-9e76-8c4663174417"
+    // let UUID = "26f7634e-f966-4a5c-9e76-8c4663174417"
+    let UUID = usersConfig.users.find(u => u.number === phone.slice(0, -5));
+    console.log(UUID.number)
 
     const postData = {
-        user_id: UUID, // Assuming the WhatsApp number is the user_id
+        user_id: `${UUID.uuid}`, // Assuming the WhatsApp number is the user_id
         agent_id: "5343525f-83f6-4d51-aa56-8608882dcf5e", // Replace with the actual agent_id if dynamic
         message: messageContent.toString(),
         stream: false,
@@ -124,19 +126,6 @@ function createPostData(message) {
     console.warn("MODIFIED DATA:", postData)
     return postData;
 }
-
-function generateUUID() {
-    let dt = new Date().getTime();
-    const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        const r = (dt + Math.random() * 16) % 16 | 0;
-        dt = Math.floor(dt / 16);
-        return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-    });
-    // Strip the last 12 characters and append the phone number
-    return uuid
-}
-
-console.log(generateUUID("919746169898"));
 
 app.use(express.json());
 
@@ -163,13 +152,5 @@ app.listen(PORT, () => {
 });
 
 
-// 1b3d7699-8b68-416e-a8c6-28c2b72fe0ee
-// 56ce216b-2056-4b1f-875a-1d4055bff889
-// 050514b3-e7af-4bdf-a34d-00b989967e8c
-// ca24bbb1-f4ee-4d9f-9abd-1a7514c9a823
-// b8155435-6715-4418-b49c-13ea2bb45930
-// 97ce474f-d89d-49e4-a06b-63f579ad08d3
-// 87d43b36-0d7e-4dc2-b6a1-900488bfc137
-// 5b900ad6-b730-44aa-aafc-7c92083498fa
 // b3c61824-7a45-43b8-93e1-e96c0f05c415
 // 3cb5c1a1-f988-421e-abe4-52277802d369
