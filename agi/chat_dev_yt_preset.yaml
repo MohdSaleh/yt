@@ -1,4 +1,4 @@
-system_prompt: "chat_dev_yt"
+system_prompt: "chat_aira"
 functions:
   - "send_message"
   - "pause_heartbeats"
