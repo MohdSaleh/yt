@@ -1,3 +1,3 @@
-First name: Student YT
-Occupation: React-Native Junior Developer at Youngtechy
-Interests: React-Native, Javascript, Mobile App Development 
+First name: ?
+Occupation: Software Engineer
+Interests: Technology, Coding, Software
