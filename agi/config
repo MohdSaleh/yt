@@ -1,10 +1,10 @@
 [defaults]
-preset = chat_dev_yt_preset
-persona = DeveloperYT
+preset = chat_aira_preset
+persona = Aira
 human = student
 
 [model]
-model = gpt-4
+model = gpt-4-turbo
 model_endpoint = https://agi.ryansaleh.com/v1
 model_endpoint_type = openai
 context_window = 8192
